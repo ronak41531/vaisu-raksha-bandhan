@@ -1,0 +1,230 @@
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;display:flex;justify-content:center;align-items:center;font-family:Arial,sans-serif;background:linear-gradient(135deg,#ffd6e7,#e8d9ff,#ffe8ef);overflow-x:hidden;padding:20px}
+.container,.vault-container{width:90%;max-width:650px;text-align:center;background:rgba(255,255,255,.94);padding:45px 28px;border-radius:30px;box-shadow:0 20px 60px rgba(75,42,70,.18);animation:appear .55s ease;position:relative;z-index:2}
+.hidden{display:none!important}.emoji{font-size:60px;margin-bottom:15px}h1{font-size:32px;margin-bottom:25px;color:#333}h1 span{color:#ff4f81}
+.question{font-size:23px;line-height:1.5;color:#555;margin-bottom:35px}
+.buttons,.quizButtons{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+button{border:0;padding:15px 30px;font-size:18px;border-radius:50px;cursor:pointer;transition:.25s}
+#yesBtn,#photosBtn,.quizButtons button{background:#ff4f81;color:white}#noBtn{background:#444;color:white;position:relative}
+#yesBtn:hover,#photosBtn:hover,.quizButtons button:hover{transform:scale(1.08)}
+#message,#quizMessage{margin-top:25px;font-size:18px;color:#ff4f81;min-height:25px;font-weight:bold}
+#progress{margin-top:25px;font-size:15px;color:#888}
+.finalQuizText{font-size:22px;line-height:1.5;color:#444;margin-bottom:20px}.smallText{color:#888;margin-bottom:30px;font-size:16px}
+
+/* Memory Vault */
+.lock{font-size:62px;margin-bottom:10px;animation:float 2.5s ease-in-out infinite}
+.eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#a17b91;font-weight:700}
+.intro-text,.final-text{font-size:18px;line-height:1.65;color:#6b5d67;margin-bottom:28px}
+.primary,.secondary{border-radius:999px;padding:15px 28px;font-size:17px;font-weight:700;box-shadow:0 8px 20px rgba(255,79,129,.2)}
+.primary{background:#ff4f81;color:#fff}.secondary{background:#f3e8ef;color:#6c5060}
+.primary:hover,.secondary:hover{transform:translateY(-2px) scale(1.03)}
+.topline{display:flex;justify-content:space-between;color:#9b7f8e;font-size:12px;font-weight:800;letter-spacing:1.5px;margin-bottom:18px}
+.photo-frame{position:relative;border-radius:22px;overflow:hidden;background:#eee;box-shadow:0 15px 35px rgba(50,35,45,.18)}
+.photo-frame img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;position:relative;z-index:1}
+.photo-glow{position:absolute;inset:-30px;background:radial-gradient(circle,rgba(255,79,129,.25),transparent 65%);filter:blur(25px)}
+.caption-box{padding:22px 8px 20px}.mini-heart{font-size:20px;margin-bottom:5px}
+.caption-box h2{font-size:25px;margin-bottom:8px}.caption-box p{font-size:17px;line-height:1.55;color:#6d6169;min-height:54px}
+.final-sparkles{font-size:25px;letter-spacing:8px;margin-bottom:12px}.final-photo-wrap{max-width:390px;margin:0 auto 22px;border-radius:24px;overflow:hidden;box-shadow:0 18px 45px rgba(50,35,45,.2)}
+.final-photo-wrap img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}.final h1{font-size:32px}.final-text{margin-bottom:22px}.final-text strong{color:#ff4f81}
+.heart{position:fixed;top:-30px;z-index:5;animation:fall linear forwards;pointer-events:none}
+@keyframes appear{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes float{50%{transform:translateY(-7px)}}@keyframes fall{to{transform:translateY(110vh) rotate(360deg);opacity:.1}}
+@media(max-width:520px){body{padding:12px}.container,.vault-container{padding:30px 18px;border-radius:24px}h1{font-size:30px}.question{font-size:20px}.caption-box h2{font-size:22px}.caption-box p{font-size:16px}}
+
+/* PREMIUM FINAL REVEAL */
+.final-sparkles{animation:sparklePulse 2s ease-in-out infinite}
+.dramatic{position:relative}
+.dramatic:after{content:"";position:absolute;inset:0;border-radius:24px;box-shadow:inset 0 0 55px rgba(255,255,255,.28);pointer-events:none}
+.letter{
+  margin:25px auto 18px;max-width:500px;padding:22px 22px 20px;
+  background:linear-gradient(145deg,#fff8fb,#fff);
+  border:1px solid #f2dce7;border-radius:22px;
+  box-shadow:0 10px 30px rgba(75,42,70,.09);
+}
+.letter-heart{font-size:30px;margin-bottom:5px}
+.letter-title{font-weight:800;font-size:19px;color:#7a5268;margin-bottom:10px}
+.letter-text{font-size:16px;line-height:1.65;color:#6d6169;margin-top:8px}
+.ending{font-size:15px;font-weight:700;letter-spacing:.5px;color:#a17b91;margin:18px 0 20px}
+.final-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.final-actions button{font-size:15px;padding:13px 20px}
+@keyframes sparklePulse{50%{transform:scale(1.04);opacity:.82}}
+
+.fun-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}
+.fun-card{border:1px solid #efdce6;background:#fff;border-radius:20px;padding:18px 10px;cursor:pointer;box-shadow:0 8px 22px rgba(70,40,65,.08)}
+.fun-card span{display:block;font-size:36px;margin-bottom:8px}.fun-card b{display:block}.fun-card small{display:block;color:#9b7f8e;margin-top:5px}
+.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0 25px}
+.mini-video{border-radius:18px;padding:25px 12px;background:linear-gradient(145deg,#fff4f8,#f5f0ff);border:1px solid #efdce6;animation:floatMini 3s ease-in-out infinite}
+.mini-video:nth-child(2){animation-delay:.4s}.mini-video:nth-child(3){animation-delay:.8s}
+.mini-video div{font-size:46px;margin-bottom:8px}.mini-video b{display:block}.mini-video small{color:#8f7a87}
+@keyframes floatMini{50%{transform:translateY(-7px)}}
+.game-modal{position:fixed;inset:0;background:rgba(40,25,38,.65);z-index:50;display:flex;align-items:center;justify-content:center;padding:15px}.game-modal.hidden{display:none!important}
+.game-card{position:relative;width:min(92vw,600px);background:#fff;border-radius:26px;padding:25px;text-align:center;box-shadow:0 25px 80px rgba(0,0,0,.25)}
+.close-game{position:absolute;right:14px;top:12px;border:0;border-radius:50%;font-size:22px;padding:4px 10px;cursor:pointer}
+#gameArea{height:300px;margin:18px 0;border-radius:18px;background:#fff3f7;position:relative;overflow:hidden;border:1px solid #efdce6}
+.game-heart,.game-target,.game-no{position:absolute;cursor:pointer;border:0}.game-heart{font-size:34px;background:transparent}.game-target{font-size:46px;background:transparent}.game-no{padding:10px 18px;border-radius:30px;background:#4c4147;color:#fff;font-weight:700}
+.game-success{padding:70px 15px;font-size:21px;font-weight:800;color:#ff4f81}
+@media(max-width:650px){.fun-grid,.video-grid{grid-template-columns:1fr}}
+
+
+/* =========================================================
+   RAKSHA BANDHAN OPENING + MEMORY-SPECIFIC TRANSITIONS
+   ========================================================= */
+body{position:relative}
+.rb-main-hidden{display:none}
+.rb-main-show{display:block;width:100%}
+.rb-opening{
+  position:fixed;inset:0;z-index:9999;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  background:
+    radial-gradient(circle at 50% 40%,rgba(255,255,255,.96) 0,rgba(255,241,247,.92) 28%,rgba(233,218,255,.98) 75%),
+    linear-gradient(135deg,#ffd7e7,#eee1ff);
+}
+.rb-opening.rb-exit{animation:rbExit .95s ease forwards;pointer-events:none}
+.rb-content{position:relative;z-index:4;width:min(92vw,760px);padding:30px}
+.rb-small{letter-spacing:3px;text-transform:uppercase;font-size:12px;color:#9a7187;font-weight:800;opacity:0;animation:rbTextIn .8s .4s forwards}
+.rb-title{margin:20px 0 12px;font-size:clamp(40px,8vw,78px);line-height:.98;color:#4a3443}
+.rb-title span,.rb-title strong{display:block}
+.rb-title span{color:#9d4f73;font-size:.72em;letter-spacing:-1px;opacity:0;animation:rbTitleIn .9s .8s cubic-bezier(.2,.8,.2,1) forwards}
+.rb-title strong{font-size:1em;color:#ff4f81;opacity:0;animation:rbNameIn 1s 1.25s cubic-bezier(.2,.8,.2,1) forwards}
+.rb-subtitle{font-size:clamp(16px,2.5vw,21px);color:#715f6b;margin:20px auto 28px;opacity:0;animation:rbTextIn .8s 1.7s forwards}
+.rb-enter{
+  opacity:0;animation:rbTextIn .8s 2.05s forwards,rbButtonGlow 2s 2.8s ease-in-out infinite;
+  background:#ff4f81;color:#fff;border:0;border-radius:999px;padding:16px 30px;
+  font-weight:800;font-size:17px;box-shadow:0 12px 30px rgba(255,79,129,.3);cursor:pointer;
+}
+.rb-enter:hover{transform:translateY(-2px) scale(1.04)}
+.rb-hint{margin-top:12px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#aa8c9d;opacity:0;animation:rbTextIn .8s 2.35s forwards}
+.rb-halo{
+  position:absolute;width:min(75vw,650px);height:min(75vw,650px);border-radius:50%;
+  border:1px solid rgba(255,255,255,.75);box-shadow:0 0 90px rgba(255,133,175,.18);
+  animation:rbHalo 4s ease-in-out infinite;
+}
+.rb-rakhi{position:absolute;left:50%;top:50%;width:210px;height:210px;transform:translate(-50%,-50%);animation:rbRakhi 1.3s .05s cubic-bezier(.2,.9,.2,1) both;z-index:2}
+.rb-knot{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:72px;height:72px;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle,#fff 10%,#ffd1e2 35%,#ff7ca7 70%,#c94e78 100%);
+  color:#fff;font-size:30px;box-shadow:0 0 0 9px rgba(255,255,255,.65),0 10px 35px rgba(198,70,116,.3);
+}
+.rb-bead{position:absolute;width:14px;height:14px;border-radius:50%;background:#ffd36e;box-shadow:0 0 0 4px rgba(255,255,255,.55)}
+.b1{left:36px;top:82px}.b2{right:36px;top:82px}.b3{left:74px;top:30px}.b4{right:74px;top:30px}
+.rb-flower{position:absolute;color:#ff6e9a;font-size:43px;text-shadow:0 4px 15px rgba(255,100,150,.22)}
+.f1{left:0;top:0;transform:rotate(-25deg)}.f2{right:0;top:0;transform:rotate(25deg)}
+.f3{left:2px;bottom:0;transform:rotate(-45deg)}.f4{right:2px;bottom:0;transform:rotate(45deg)}
+.rb-thread{position:absolute;top:0;width:2px;height:100%;background:linear-gradient(transparent,rgba(190,104,139,.55),transparent);opacity:.45}
+.thread-left{left:17%;transform:rotate(14deg)}.thread-right{right:17%;transform:rotate(-14deg)}
+.rb-particles{position:absolute;inset:0}
+.rb-particle{position:absolute;width:6px;height:6px;border-radius:50%;background:#fff;box-shadow:0 0 14px #fff;animation:rbFloat 5s linear infinite}
+
+@keyframes rbRakhi{from{opacity:0;transform:translate(-50%,-50%) scale(.2) rotate(-30deg)}to{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(0)}}
+@keyframes rbTitleIn{from{opacity:0;transform:translateY(25px);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
+@keyframes rbNameIn{from{opacity:0;transform:scale(.65);filter:blur(8px)}65%{transform:scale(1.08)}to{opacity:1;transform:scale(1);filter:none}}
+@keyframes rbTextIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+@keyframes rbHalo{50%{transform:scale(1.05);opacity:.7}}
+@keyframes rbButtonGlow{50%{box-shadow:0 12px 38px rgba(255,79,129,.48)}}
+@keyframes rbFloat{from{transform:translateY(110vh) rotate(0);opacity:0}15%{opacity:.8}to{transform:translateY(-10vh) rotate(360deg);opacity:0}}
+@keyframes rbExit{to{opacity:0;transform:scale(1.08);visibility:hidden}}
+@media(max-width:600px){.rb-thread{display:none}.rb-rakhi{transform:translate(-50%,-50%) scale(.78);animation:rbRakhiMobile 1.3s .05s both}.rb-title{font-size:42px}}
+@keyframes rbRakhiMobile{from{opacity:0;transform:translate(-50%,-50%) scale(.15)}to{opacity:1;transform:translate(-50%,-50%) scale(.78)}}
+
+/* Memory entrance classes. JS assigns one class per memory. */
+.photo-frame{transition:box-shadow .5s ease}
+.photo-frame.memory-1{animation:memPolaroid .9s cubic-bezier(.2,.9,.2,1)}
+.photo-frame.memory-2{animation:memBell .9s cubic-bezier(.2,.8,.2,1)}
+.photo-frame.memory-3{animation:memCurtain .95s cubic-bezier(.2,.85,.2,1)}
+.photo-frame.memory-4{animation:memLeaves .9s cubic-bezier(.2,.8,.2,1)}
+.photo-frame.memory-5{animation:memBloom 1s cubic-bezier(.2,.9,.2,1)}
+.photo-frame.memory-6{animation:memSnow 1.05s cubic-bezier(.2,.8,.2,1)}
+.photo-frame.memory-7{animation:memCamera .9s cubic-bezier(.2,.85,.2,1)}
+.photo-frame.memory-8{animation:memBounce .9s cubic-bezier(.2,.9,.2,1)}
+.photo-frame.memory-9{animation:memStyle .9s cubic-bezier(.2,.8,.2,1)}
+.photo-frame.memory-10{animation:memFinal .95s cubic-bezier(.2,.9,.2,1)}
+
+@keyframes memPolaroid{from{opacity:0;transform:rotate(-8deg) translate(-70px,35px) scale(.75);filter:blur(4px)}to{opacity:1;transform:none;filter:none}}
+@keyframes memBell{0%{opacity:0;transform:scale(.7) rotate(-4deg);filter:blur(5px)}45%{transform:scale(1.03) rotate(4deg)}70%{transform:rotate(-2deg)}to{opacity:1;transform:none;filter:none}}
+@keyframes memCurtain{from{opacity:0;clip-path:inset(0 50% 0 50%);transform:scale(1.06)}to{opacity:1;clip-path:inset(0);transform:none}}
+@keyframes memLeaves{from{opacity:0;transform:translateX(-90px) rotate(-3deg);clip-path:inset(0 100% 0 0)}to{opacity:1;transform:none;clip-path:inset(0)}}
+@keyframes memBloom{0%{opacity:0;transform:scale(.65);filter:blur(9px)}60%{transform:scale(1.04)}to{opacity:1;transform:scale(1);filter:none}}
+@keyframes memSnow{from{opacity:0;transform:translateY(-35px) scale(1.06);filter:brightness(1.7) blur(5px)}to{opacity:1;transform:none;filter:none}}
+@keyframes memCamera{from{opacity:0;transform:scale(1.22);filter:contrast(1.3) saturate(.4) blur(2px)}45%{transform:scale(.98)}to{opacity:1;transform:none;filter:none}}
+@keyframes memBounce{0%{opacity:0;transform:translateY(60px) scale(.7) rotate(5deg)}55%{transform:translateY(-12px) scale(1.04) rotate(-2deg)}to{opacity:1;transform:none}}
+@keyframes memStyle{from{opacity:0;transform:translateX(80px) scale(.88);filter:grayscale(.8) blur(4px)}to{opacity:1;transform:none;filter:none}}
+@keyframes memFinal{from{opacity:0;transform:scale(.72);filter:brightness(1.7) blur(8px)}55%{transform:scale(1.03);filter:brightness(1.12) blur(0)}to{opacity:1;transform:none;filter:none}}
+
+.final-reveal-live .dramatic{animation:finalReveal .95s cubic-bezier(.2,.9,.2,1)}
+.final-reveal-live .letter{animation:letterRise .9s .35s both}
+@keyframes finalReveal{from{opacity:0;transform:scale(.55) rotate(-2deg);filter:brightness(1.8) blur(9px)}60%{transform:scale(1.035);filter:brightness(1.12) blur(0)}to{opacity:1;transform:none;filter:none}}
+@keyframes letterRise{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
+
+
+/* =========================================================
+   CENTERING FIX — MAIN EXPERIENCE
+   Everything after the Raksha Bandhan opening stays centered.
+   ========================================================= */
+#mainExperience{
+  width:100%;
+  min-height:100vh;
+  margin:0 auto;
+}
+#mainExperience > *,
+#mainExperience .container,
+#mainExperience .section,
+#mainExperience .hero,
+#mainExperience .question,
+#mainExperience .question-card,
+#mainExperience .memory-section,
+#mainExperience .memory-vault,
+#mainExperience .final-section{
+  box-sizing:border-box;
+}
+#mainExperience .container,
+#mainExperience .hero,
+#mainExperience .question,
+#mainExperience .question-card,
+#mainExperience .memory-section,
+#mainExperience .memory-vault,
+#mainExperience .final-section{
+  margin-left:auto;
+  margin-right:auto;
+}
+#mainExperience .question-card,
+#mainExperience .memory-vault,
+#mainExperience .memory-section,
+#mainExperience .final-section{
+  width:min(94vw,1100px);
+}
+#mainExperience .memory-section,
+#mainExperience .final-section{
+  text-align:center;
+}
+#mainExperience img{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+#mainExperience .photo-frame{
+  margin-left:auto;
+  margin-right:auto;
+}
+#mainExperience .buttons,
+#mainExperience .button-row,
+#mainExperience .actions,
+#mainExperience .choices{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+#mainExperience .question,
+#mainExperience .question-card{
+  text-align:center;
+}
+@media(max-width:700px){
+  #mainExperience .question-card,
+  #mainExperience .memory-vault,
+  #mainExperience .memory-section,
+  #mainExperience .final-section{
+    width:92vw;
+  }
+}

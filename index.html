@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Vaisu ❤️</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- RAKSHA BANDHAN OPENING -->
+<section class="rb-opening" id="rbOpening">
+  <div class="rb-particles" aria-hidden="true"></div>
+  <div class="rb-thread thread-left"></div>
+  <div class="rb-thread thread-right"></div>
+  <div class="rb-halo"></div>
+
+  <div class="rb-content">
+    <div class="rb-rakhi" aria-hidden="true">
+      <span class="rb-knot">✦</span>
+      <span class="rb-bead b1"></span><span class="rb-bead b2"></span>
+      <span class="rb-bead b3"></span><span class="rb-bead b4"></span>
+      <span class="rb-flower f1">✿</span><span class="rb-flower f2">✿</span>
+      <span class="rb-flower f3">✿</span><span class="rb-flower f4">✿</span>
+    </div>
+    <p class="rb-small">A little surprise, made with love</p>
+    <h1 class="rb-title"><span>Happy Raksha Bandhan</span><strong>Vaisu ❤️</strong></h1>
+    <p class="rb-subtitle">For my favourite sister — one memory at a time.</p>
+    <button class="rb-enter" id="rbEnter">Open Your Surprise ✨</button>
+    <div class="rb-hint">tap to begin</div>
+  </div>
+</section>
+
+<div id="mainExperience" class="rb-main-hidden">
+
+<div class="container" id="teasingSection">
+  <div class="emoji">😈</div>
+  <h1>Vaisu, ek sawaal hai...</h1>
+  <p class="question">Kya tum duniya ki sabse cute <b>Motu</b> ho? 😂❤️</p>
+  <div class="buttons">
+    <button id="yesBtn">Haan 😇</button>
+    <button id="noBtn">Nahi 😈</button>
+  </div>
+  <p id="message"></p>
+</div>
+
+<div class="container hidden" id="quizSection">
+  <div class="emoji">😂</div>
+  <h1>Chalo... thoda sach bolte hain 😏</h1>
+  <div id="questionBox">
+    <p id="quizQuestion" class="question"></p>
+    <div class="quizButtons">
+      <button id="option1"></button>
+      <button id="option2"></button>
+    </div>
+    <p id="quizMessage"></p>
+  </div>
+  <p id="progress"></p>
+</div>
+
+
+<div class="container hidden" id="funZone">
+  <div class="emoji">🎮</div>
+  <p class="eyebrow">BONUS ROUND</p>
+  <h1>Vaisu Fun Zone 😂</h1>
+  <p class="question">Play a little before opening the memories! ❤️</p>
+
+  <div class="fun-grid">
+    <button class="fun-card" data-game="heart"><span>❤️</span><b>Heart Catcher</b><small>Catch 10 hearts</small></button>
+    <button class="fun-card" data-game="tap"><span>😂</span><b>Motu Tap</b><small>Tap Motu 10 times</small></button>
+    <button class="fun-card" data-game="no"><span>😈</span><b>Catch the NO</b><small>Catch it 5 times</small></button>
+  </div>
+
+  <div class="video-zone">
+    <p class="eyebrow">BONUS ANIMATIONS</p>
+    <h2>😂 Tiny Vaisu Moments</h2>
+    <div class="video-grid">
+      <div class="mini-video"><div>😂</div><b>MOTU ALERT</b><small>Cuteness detected!</small></div>
+      <div class="mini-video"><div>❤️</div><b>SISTER LEVEL 100</b><small>Kind heart unlocked.</small></div>
+      <div class="mini-video"><div>✨</div><b>FINAL SURPRISE</b><small>Something special is waiting.</small></div>
+    </div>
+  </div>
+
+  <button class="primary" id="toVaultBtn">Open the Memory Vault 🔐</button>
+</div>
+
+<div class="game-modal hidden" id="gameModal">
+  <div class="game-card">
+    <button class="close-game" id="closeGame">×</button>
+    <p class="eyebrow">BONUS GAME</p>
+    <h2 id="gameTitle"></h2>
+    <p id="gameInstruction"></p>
+    <div id="gameArea"></div>
+    <p id="gameScore"></p>
+  </div>
+</div>
+
+<div class="container hidden" id="quizEndSection">
+  <div class="emoji">🚨😂</div>
+  <h1>Investigation complete!</h1>
+  <p class="finalQuizText">Bas bas... 😂<br><br>Tumhari saari sachchai record ho chuki hai.</p>
+  <p class="smallText">Ab is evidence ko tumhare khilaaf use kiya jayega. 😈</p>
+  <button id="photosBtn">Bonus Round 🎮</button>
+</div>
+
+<!-- STEP 3: MEMORY VAULT -->
+<div class="vault-container hidden" id="vaultIntro">
+  <div class="lock">🔐</div>
+  <p class="eyebrow">A little secret place...</p>
+  <h1>Vaisu's<br><span>Memory Vault</span> ❤️</h1>
+  <p class="intro-text">10 memories are waiting for you.<br>But you'll have to unlock them one by one. 😈</p>
+  <button class="primary" id="startVaultBtn">Open the Vault ✨</button>
+</div>
+
+<div class="vault-container hidden" id="memorySection">
+  <div class="topline"><span id="memoryNo">MEMORY 01</span><span id="counter">1 / 10</span></div>
+  <div class="photo-frame">
+    <div class="photo-glow"></div>
+    <img id="memoryPhoto" src="" alt="Memory photo">
+  </div>
+  <div class="caption-box">
+    <div class="mini-heart">❤️</div>
+    <h2 id="memoryTitle"></h2>
+    <p id="memoryCaption"></p>
+  </div>
+  <button class="primary" id="nextBtn">Unlock Next ❤️</button>
+</div>
+
+<div class="vault-container hidden" id="finalSection">
+  <div class="final-sparkles">✦ ✨ ❤️ ✨ ✦</div>
+  <p class="eyebrow">THE FINAL REVEAL</p>
+  <div class="final-photo-wrap dramatic"><img src="images/memory-10.jpg" alt="Final memory"></div>
+  <h1>Okay... this one<br><span>deserves the ending.</span> ❤️</h1>
+  <p class="final-text">10 memories. One very special Motu. 😌<br><br>
+  And yes... you looked cute in all of them.<br>
+  <strong>Don't let this compliment go to your head. 😏</strong></p>
+
+  <div class="letter">
+    <div class="letter-heart">💌</div>
+    <p class="letter-title">One last thing...</p>
+    <p class="letter-text">
+      Haan haan, maan liya... tu <strong>Motu</strong> hai 😂😂
+    </p>
+    <p class="letter-text">
+      Lekin Motu hone se kya hota hai, dil toh tera ekdum bada hai ❤️
+      Tu bahut kind-hearted aur achhi insaan hai...
+      bas thodi si moti hai, woh alag baat hai. 😭😂
+    </p>
+    <p class="letter-text">
+      Aur sabse important — tu meri <strong>behen</strong> hai,
+      isliye tujhe jhelna toh padega hi. 😂❤️
+    </p>
+    <p class="letter-text"><strong>Love you, Motu! 🫶</strong></p>
+  </div>
+
+  <p class="ending">Made specially for you, Vaisu. ❤️</p>
+
+  <div class="final-actions">
+    <button class="primary" id="restartBtn">Start From Beginning ↻</button>
+    <button class="secondary" id="replayBtn">Watch Memories Again ✨</button>
+  </div>
+</div>
+
+</div>
+<div class="hearts" aria-hidden="true"></div>
+<script src="script.js"></script>
+</body>
+</html>
