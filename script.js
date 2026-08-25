@@ -76,7 +76,7 @@ function showMemory(){
     void frame.offsetWidth;
     frame.className="photo-frame memory-"+(current+1);
   }
-  memoryPhoto.src=`images/memory-${String(current+1).padStart(2,"0")}.jpg`;
+  memoryPhoto.src = `memory-${String(current+1).padStart(2,"0")}.jpg`;
   memoryTitle.textContent=m.title;
   memoryCaption.textContent=m.caption;
   memoryNo.textContent=`MEMORY ${String(current+1).padStart(2,"0")}`;
